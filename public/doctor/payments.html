@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Payments - Doctor Dashboard</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <nav>
+            <h2>Doctor Dashboard</h2>
+            <ul>
+                <li><a href="dashboard.html">
+                    <i class="fas fa-home"></i> Dashboard</a>
+                </li>
+                <li><a href="appointments.html">
+                    <i class="fas fa-calendar-check"></i> Appointments</a>
+                </li>
+                <li><a href="patients.html">
+                    <i class="fas fa-users"></i> My Patients</a>
+                </li>
+                <li><a href="schedule.html">
+                    <i class="fas fa-clock"></i> My Schedule</a>
+                </li>
+                <li><a href="profile.html">
+                    <i class="fas fa-user-md"></i> Profile</a>
+                </li>
+                <li><a href="#" id="logout">
+                    <i class="fas fa-sign-out-alt"></i> Logout</a>
+                </li>
+            </ul>
+        </nav>
+        <main class="content">
+            <div class="payments-container">
+                <h2>Patient Payments</h2>
+                <div class="filters">
+                    <select id="monthFilter">
+                        <option value="">All Time</option>
+                        <option value="1">January</option>
+                        <!-- Add all months -->
+                    </select>
+                    <select id="yearFilter">
+                        <option value="">All Years</option>
+                        <option value="2024">2024</option>
+                        <option value="2023">2023</option>
+                    </select>
+                    <select id="statusFilter">
+                        <option value="">All Status</option>
+                        <option value="paid">Paid</option>
+                        <option value="pending">Pending</option>
+                    </select>
+                </div>
+                <div class="payments-summary">
+                    <div class="summary-card">
+                        <h3>Total Earnings</h3>
+                        <p id="totalEarnings">KES 0</p>
+                    </div>
+                    <div class="summary-card">
+                        <h3>Pending Payments</h3>
+                        <p id="pendingPayments">KES 0</p>
+                    </div>
+                    <div class="summary-card">
+                        <h3>Completed Payments</h3>
+                        <p id="completedPayments">KES 0</p>
+                    </div>
+                </div>
+                <div class="payments-list" id="paymentsList">
+                    <!-- Payments will be loaded here -->
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="../js/doctor/payments.js"></script>
+</body>
+</html> 

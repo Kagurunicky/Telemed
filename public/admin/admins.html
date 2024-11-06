@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Admins - Admin Dashboard</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <nav>
+            <!-- Same navigation as dashboard.html -->
+        </nav>
+        <main class="content">
+            <div class="admins-header">
+                <h2>Manage Administrators</h2>
+                <button onclick="openAddAdminModal()" class="btn-primary">
+                    <i class="fas fa-plus"></i> Add New Admin
+                </button>
+            </div>
+
+            <div class="filters">
+                <input type="text" id="searchAdmin" placeholder="Search admins...">
+                <select id="roleFilter">
+                    <option value="">All Roles</option>
+                    <option value="super_admin">Super Admin</option>
+                    <option value="admin">Admin</option>
+                    <option value="moderator">Moderator</option>
+                </select>
+            </div>
+
+            <div id="adminsList" class="admins-grid">
+                <!-- Admins will be listed here -->
+            </div>
+
+            <!-- Add/Edit Admin Modal -->
+            <div id="adminModal" class="modal">
+                <div class="modal-content">
+                    <h3 id="modalTitle">Add New Administrator</h3>
+                    <form id="adminForm">
+                        <input type="hidden" id="adminId">
+                        <div class="form-group">
+                            <label for="username">Username</label>
+                            <input type="text" id="username" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <input type="password" id="password">
+                            <small>Leave blank to keep existing password when editing</small>
+                        </div>
+                        <div class="form-group">
+                            <label for="role">Role</label>
+                            <select id="role" required>
+                                <option value="admin">Admin</option>
+                                <option value="moderator">Moderator</option>
+                            </select>
+                        </div>
+                        <div class="modal-buttons">
+                            <button type="button" class="btn-secondary" onclick="closeAdminModal()">Cancel</button>
+                            <button type="submit" class="btn-primary">Save Admin</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="../js/admin/admins.js"></script>
+</body>
+</html> 

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Patients - Admin Dashboard</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <nav>
+            <h2>Admin Dashboard</h2>
+            <ul>
+                <li><a href="dashboard.html" class="active">
+                    <i class="fas fa-home"></i> Dashboard</a>
+                </li>
+                <li><a href="doctors.html">
+                    <i class="fas fa-user-md"></i> Manage Doctors</a>
+                </li>
+                <li><a href="patients.html">
+                    <i class="fas fa-users"></i> Manage Patients</a>
+                </li>
+                <li><a href="appointments.html">
+                    <i class="fas fa-calendar-check"></i> Appointments</a>
+                </li>
+                <li><a href="#" id="logout">
+                    <i class="fas fa-sign-out-alt"></i> Logout</a>
+                </li>
+            </ul>
+        </nav>
+        <main class="content">
+            <div class="patients-header">
+                <h2>Manage Patients</h2>
+                <div class="search-filters">
+                    <input type="text" id="searchPatient" placeholder="Search patients...">
+                    <select id="statusFilter">
+                        <option value="all">All Patients</option>
+                        <option value="active">Active</option>
+                        <option value="inactive">Inactive</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="patients-grid" id="patientsList">
+                <!-- Patients will be loaded here -->
+            </div>
+
+            <!-- Patient Details Modal -->
+            <div id="patientModal" class="modal">
+                <div class="modal-content">
+                    <h3>Patient Details</h3>
+                    <div id="patientDetails"></div>
+                    <div class="modal-buttons">
+                        <button onclick="closePatientModal()" class="btn-secondary">Close</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="../js/admin/patients.js"></script>
+</body>
+</html> 

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Appointments - Admin Dashboard</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <nav>
+            <h2>Admin Dashboard</h2>
+            <ul>
+                <li><a href="dashboard.html" class="active">
+                    <i class="fas fa-home"></i> Dashboard</a>
+                </li>
+                <li><a href="doctors.html">
+                    <i class="fas fa-user-md"></i> Manage Doctors</a>
+                </li>
+                <li><a href="patients.html">
+                    <i class="fas fa-users"></i> Manage Patients</a>
+                </li>
+                <li><a href="appointments.html">
+                    <i class="fas fa-calendar-check"></i> Appointments</a>
+                </li>
+                <li><a href="#" id="logout">
+                    <i class="fas fa-sign-out-alt"></i> Logout</a>
+                </li>
+            </ul>
+        </nav>
+        <main class="content">
+            <div class="appointments-header">
+                <h2>Manage Appointments</h2>
+                <div class="filters">
+                    <input type="date" id="dateFilter">
+                    <select id="statusFilter">
+                        <option value="all">All Status</option>
+                        <option value="scheduled">Scheduled</option>
+                        <option value="completed">Completed</option>
+                        <option value="canceled">Canceled</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="appointments-grid" id="appointmentsList">
+                <!-- Appointments will be loaded here -->
+            </div>
+        </main>
+    </div>
+    <script src="../js/admin/appointments.js"></script>
+</body>
+</html> 

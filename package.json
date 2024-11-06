@@ -1,0 +1,10 @@
+{
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js",
+    "init-db": "node config/init-db.js",
+    "insert-doctors": "node scripts/insert_doctors.js",
+    "verify-doctor": "node scripts/verify-doctor.js",
+    "setup-doctors": "node scripts/setup-doctors.js"
+  }
+}

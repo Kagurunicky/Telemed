@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Doctors - Admin Dashboard</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <nav>
+            <h2>Admin Dashboard</h2>
+            <ul>
+                <li><a href="dashboard.html" class="active">
+                    <i class="fas fa-home"></i> Dashboard</a>
+                </li>
+                <li><a href="doctors.html">
+                    <i class="fas fa-user-md"></i> Manage Doctors</a>
+                </li>
+                <li><a href="patients.html">
+                    <i class="fas fa-users"></i> Manage Patients</a>
+                </li>
+                <li><a href="appointments.html">
+                    <i class="fas fa-calendar-check"></i> Appointments</a>
+                </li>
+                <li><a href="#" id="logout">
+                    <i class="fas fa-sign-out-alt"></i> Logout</a>
+                </li>
+            </ul>
+        </nav>
+        <main class="content">
+            <div class="doctors-header">
+                <h2>Manage Doctors</h2>
+                <button onclick="openAddDoctorModal()" class="btn-primary">
+                    <i class="fas fa-plus"></i> Add New Doctor
+                </button>
+            </div>
+
+            <div class="filters">
+                <input type="text" id="searchDoctor" placeholder="Search doctors...">
+                <select id="specializationFilter">
+                    <option value="">All Specializations</option>
+                </select>
+                <select id="statusFilter">
+                    <option value="">All Status</option>
+                    <option value="active">Active</option>
+                    <option value="inactive">Inactive</option>
+                </select>
+            </div>
+
+            <div id="doctorsList" class="doctors-grid">
+                <!-- Doctors will be listed here -->
+            </div>
+
+            <!-- Add/Edit Doctor Modal -->
+            <div id="doctorModal" class="modal">
+                <div class="modal-content">
+                    <h3 id="modalTitle">Add New Doctor</h3>
+                    <form id="doctorForm">
+                        <input type="hidden" id="doctorId">
+                        <div class="form-group">
+                            <label for="firstName">First Name</label>
+                            <input type="text" id="firstName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="lastName">Last Name</label>
+                            <input type="text" id="lastName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone</label>
+                            <input type="tel" id="phone" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="specialization">Specialization</label>
+                            <select id="specialization" required>
+                                <option value="">Select Specialization</option>
+                                <option value="General Medicine">General Medicine</option>
+                                <option value="Pediatrics">Pediatrics</option>
+                                <option value="Cardiology">Cardiology</option>
+                                <option value="Dermatology">Dermatology</option>
+                                <option value="Psychiatry">Psychiatry</option>
+                                <option value="Orthopedics">Orthopedics</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="licenseNumber">Medical License Number</label>
+                            <input type="text" id="licenseNumber" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Schedule</label>
+                            <div class="schedule-grid">
+                                <div class="schedule-day">
+                                    <label>
+                                        <input type="checkbox" name="days" value="monday"> Monday
+                                    </label>
+                                    <select class="time-slot" data-day="monday" multiple>
+                                        <option value="09:00">09:00 AM</option>
+                                        <option value="10:00">10:00 AM</option>
+                                        <option value="11:00">11:00 AM</option>
+                                        <option value="14:00">02:00 PM</option>
+                                        <option value="15:00">03:00 PM</option>
+                                        <option value="16:00">04:00 PM</option>
+                                    </select>
+                                </div>
+                                <!-- Repeat for other days -->
+                            </div>
+                        </div>
+                        <div class="modal-buttons">
+                            <button type="button" class="btn-secondary" onclick="closeDoctorModal()">Cancel</button>
+                            <button type="submit" class="btn-primary">Save Doctor</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="../js/admin/doctors.js"></script>
+</body>
+</html> 

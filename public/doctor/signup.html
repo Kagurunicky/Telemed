@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor Registration - Pendo Medicare</title>
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="signup-card">
+            <h2>Doctor Registration</h2>
+            <form id="doctorSignupForm">
+                <div class="form-group">
+                    <label for="firstName">First Name</label>
+                    <input type="text" id="firstName" required>
+                </div>
+                <div class="form-group">
+                    <label for="lastName">Last Name</label>
+                    <input type="text" id="lastName" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone</label>
+                    <input type="tel" id="phone" required>
+                </div>
+                <div class="form-group">
+                    <label for="specialization">Specialization</label>
+                    <select id="specialization" required>
+                        <option value="">Select Specialization</option>
+                        <option value="General Medicine">General Medicine</option>
+                        <option value="Pediatrics">Pediatrics</option>
+                        <option value="Cardiology">Cardiology</option>
+                        <option value="Dermatology">Dermatology</option>
+                        <option value="Psychiatry">Psychiatry</option>
+                        <option value="Orthopedics">Orthopedics</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Working Days</label>
+                    <div class="schedule-grid">
+                        <div class="schedule-day">
+                            <input type="checkbox" id="monday" name="workingDays" value="monday">
+                            <label for="monday">Monday</label>
+                        </div>
+                        <div class="schedule-day">
+                            <input type="checkbox" id="tuesday" name="workingDays" value="tuesday">
+                            <label for="tuesday">Tuesday</label>
+                        </div>
+                        <div class="schedule-day">
+                            <input type="checkbox" id="wednesday" name="workingDays" value="wednesday">
+                            <label for="wednesday">Wednesday</label>
+                        </div>
+                        <div class="schedule-day">
+                            <input type="checkbox" id="thursday" name="workingDays" value="thursday">
+                            <label for="thursday">Thursday</label>
+                        </div>
+                        <div class="schedule-day">
+                            <input type="checkbox" id="friday" name="workingDays" value="friday">
+                            <label for="friday">Friday</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Working Hours</label>
+                    <div class="time-range">
+                        <div>
+                            <label for="startTime">Start Time</label>
+                            <input type="time" id="startTime" required>
+                        </div>
+                        <div>
+                            <label for="endTime">End Time</label>
+                            <input type="time" id="endTime" required>
+                        </div>
+                    </div>
+                </div>
+                <button type="submit" class="btn-primary">Register</button>
+            </form>
+            <p class="text-center">
+                Already have an account? <a href="login.html">Login</a>
+            </p>
+        </div>
+    </div>
+    <script src="../js/doctor/signup.js"></script>
+</body>
+</html> 

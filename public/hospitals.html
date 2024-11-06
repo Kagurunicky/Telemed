@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nearby Hospitals - Pendo Medicare</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Add Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+</head>
+<body>
+    <div class="dashboard-container">
+        <nav>
+            <h2>Welcome</h2>
+            <ul>
+                <li><a href="book-appointment.html">Book Appointment</a></li>
+                <li><a href="view-appointments.html">View Appointments</a></li>
+                <li><a href="hospitals.html" class="active">Nearby Hospitals</a></li>
+                <li><a href="#" id="logout">Logout</a></li>
+            </ul>
+        </nav>
+        <main class="content">
+            <div class="hospitals-container">
+                <div class="search-filters">
+                    <div class="location-search">
+                        <button onclick="useCurrentLocation()" class="btn-location">
+                            <i class="fas fa-location-arrow"></i> Use My Location
+                        </button>
+                    </div>
+                    <div class="radius-filter">
+                        <label for="searchRadius">Search Radius:</label>
+                        <select id="searchRadius">
+                            <option value="5">5 km</option>
+                            <option value="10" selected>10 km</option>
+                            <option value="20">20 km</option>
+                            <option value="50">50 km</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="hospitals-layout">
+                    <div id="map" class="hospitals-map"></div>
+                    <div class="hospitals-list" id="hospitalsList">
+                        <div id="loadingIndicator" class="loading-indicator">
+                            <i class="fas fa-spinner fa-spin"></i> Loading hospitals...
+                        </div>
+                    </div>
+                </div>
+
+                <div id="errorMessage" class="error-message" style="display: none;"></div>
+            </div>
+        </main>
+    </div>
+
+    <style>
+        .hospitals-map {
+            height: 500px;
+            width: 100%;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        .loading-indicator {
+            text-align: center;
+            padding: 20px;
+            color: #666;
+        }
+
+        .error-message {
+            background-color: #ffebee;
+            color: #c62828;
+            padding: 10px;
+            border-radius: 4px;
+            margin: 10px 0;
+            text-align: center;
+        }
+
+        .hospital-item {
+            background: white;
+            padding: 15px;
+            margin-bottom: 10px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+    </style>
+
+    <!-- Add Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="js/hospitals.js"></script>
+</body>

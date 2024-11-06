@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appointments - Doctor Dashboard</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <nav>
+            <h2>Doctor Dashboard</h2>
+            <ul>
+                <li><a href="dashboard.html" class="active">
+                    <i class="fas fa-home"></i> Dashboard</a>
+                </li>
+                <li><a href="appointments.html">
+                    <i class="fas fa-calendar-check"></i> Appointments</a>
+                </li>
+                <li><a href="patients.html">
+                    <i class="fas fa-users"></i> My Patients</a>
+                </li>
+                <li><a href="schedule.html">
+                    <i class="fas fa-clock"></i> My Schedule</a>
+                </li>
+                <li><a href="profile.html">
+                    <i class="fas fa-user-md"></i> Profile</a>
+                </li>
+                <li><a href="#" id="logout">
+                    <i class="fas fa-sign-out-alt"></i> Logout</a>
+                </li>
+            </ul>
+        </nav>
+        <main class="content">
+            <div class="appointments-header">
+                <h2>Manage Appointments</h2>
+                <div class="filters">
+                    <select id="dateFilter">
+                        <option value="today">Today</option>
+                        <option value="tomorrow">Tomorrow</option>
+                        <option value="week">This Week</option>
+                        <option value="month">This Month</option>
+                    </select>
+                    <select id="statusFilter">
+                        <option value="all">All Status</option>
+                        <option value="scheduled">Scheduled</option>
+                        <option value="completed">Completed</option>
+                        <option value="canceled">Canceled</option>
+                    </select>
+                </div>
+            </div>
+
+            <div id="appointmentsList" class="appointments-grid"></div>
+
+            <!-- Consultation Modal -->
+            <div id="consultationModal" class="modal">
+                <div class="modal-content">
+                    <h3>Patient Consultation</h3>
+                    <form id="consultationForm">
+                        <input type="hidden" id="appointmentId">
+                        <div class="form-group">
+                            <label>Diagnosis</label>
+                            <textarea id="diagnosis" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label>Prescription</label>
+                            <textarea id="prescription" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label>Notes</label>
+                            <textarea id="notes"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label>Follow-up Date</label>
+                            <input type="date" id="followUpDate">
+                        </div>
+                        <div class="modal-buttons">
+                            <button type="button" class="btn-secondary" onclick="closeConsultationModal()">Cancel</button>
+                            <button type="submit" class="btn-primary">Complete Consultation</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="../js/doctor/appointments.js"></script>
+</body>
+</html> 

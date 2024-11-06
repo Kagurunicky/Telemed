@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Schedule - Doctor Dashboard</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <nav>
+            <h2>Doctor Dashboard</h2>
+            <ul>
+                <li><a href="dashboard.html">
+                    <i class="fas fa-home"></i> Dashboard</a>
+                </li>
+                <li><a href="appointments.html">
+                    <i class="fas fa-calendar-check"></i> Appointments</a>
+                </li>
+                <li><a href="patients.html">
+                    <i class="fas fa-users"></i> My Patients</a>
+                </li>
+                <li><a href="schedule.html" class="active">
+                    <i class="fas fa-clock"></i> My Schedule</a>
+                </li>
+                <li><a href="profile.html">
+                    <i class="fas fa-user-md"></i> Profile</a>
+                </li>
+                <li><a href="#" id="logout">
+                    <i class="fas fa-sign-out-alt"></i> Logout</a>
+                </li>
+            </ul>
+        </nav>
+        <main class="content">
+            <div class="schedule-container">
+                <h2>Manage Schedule</h2>
+                <div class="schedule-grid">
+                    <div class="day-schedule">
+                        <h3>Monday</h3>
+                        <div class="time-slots">
+                            <div class="form-group">
+                                <label>Working Hours</label>
+                                <div class="time-range">
+                                    <input type="time" id="monday-start" class="start-time">
+                                    <span>to</span>
+                                    <input type="time" id="monday-end" class="end-time">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Break Time</label>
+                                <div class="time-range">
+                                    <input type="time" id="monday-break-start" class="break-start">
+                                    <span>to</span>
+                                    <input type="time" id="monday-break-end" class="break-end">
+                                </div>
+                            </div>
+                            <div class="slot-duration">
+                                <label>Appointment Duration</label>
+                                <select id="monday-duration">
+                                    <option value="15">15 minutes</option>
+                                    <option value="30" selected>30 minutes</option>
+                                    <option value="45">45 minutes</option>
+                                    <option value="60">60 minutes</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Repeat for other days -->
+                </div>
+                <button type="button" class="btn-primary" onclick="saveSchedule()">Save Schedule</button>
+            </div>
+        </main>
+    </div>
+    <script src="../js/doctor/schedule.js"></script>
+</body>
+</html> 

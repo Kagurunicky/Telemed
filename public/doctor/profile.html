@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor Profile - Pendo Medicare</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <nav>
+            <h2>Doctor Dashboard</h2>
+            <ul>
+                <li><a href="dashboard.html">
+                    <i class="fas fa-home"></i> Dashboard</a>
+                </li>
+                <li><a href="appointments.html">
+                    <i class="fas fa-calendar-check"></i> Appointments</a>
+                </li>
+                <li><a href="patients.html">
+                    <i class="fas fa-users"></i> My Patients</a>
+                </li>
+                <li><a href="schedule.html">
+                    <i class="fas fa-clock"></i> My Schedule</a>
+                </li>
+                <li><a href="profile.html" class="active">
+                    <i class="fas fa-user-md"></i> Profile</a>
+                </li>
+                <li><a href="#" id="logout">
+                    <i class="fas fa-sign-out-alt"></i> Logout</a>
+                </li>
+            </ul>
+        </nav>
+        <main class="content">
+            <div class="profile-container">
+                <h2>My Profile</h2>
+                <div class="profile-card">
+                    <form id="doctorProfileForm">
+                        <div class="form-group">
+                            <label for="firstName">First Name</label>
+                            <input type="text" id="firstName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="lastName">Last Name</label>
+                            <input type="text" id="lastName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" required readonly>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone</label>
+                            <input type="tel" id="phone" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="specialization">Specialization</label>
+                            <input type="text" id="specialization" required readonly>
+                        </div>
+                        <div class="form-group">
+                            <label>Working Days</label>
+                            <div class="schedule-grid">
+                                <div class="schedule-day">
+                                    <input type="checkbox" id="monday" name="workingDays" value="monday">
+                                    <label for="monday">Monday</label>
+                                </div>
+                                <div class="schedule-day">
+                                    <input type="checkbox" id="tuesday" name="workingDays" value="tuesday">
+                                    <label for="tuesday">Tuesday</label>
+                                </div>
+                                <div class="schedule-day">
+                                    <input type="checkbox" id="wednesday" name="workingDays" value="wednesday">
+                                    <label for="wednesday">Wednesday</label>
+                                </div>
+                                <div class="schedule-day">
+                                    <input type="checkbox" id="thursday" name="workingDays" value="thursday">
+                                    <label for="thursday">Thursday</label>
+                                </div>
+                                <div class="schedule-day">
+                                    <input type="checkbox" id="friday" name="workingDays" value="friday">
+                                    <label for="friday">Friday</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Working Hours</label>
+                            <div class="time-range">
+                                <div>
+                                    <label for="startTime">Start Time</label>
+                                    <input type="time" id="startTime" required>
+                                </div>
+                                <div>
+                                    <label for="endTime">End Time</label>
+                                    <input type="time" id="endTime" required>
+                                </div>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn-primary">Update Profile</button>
+                    </form>
+                </div>
+
+                <div class="password-change-card">
+                    <h3>Change Password</h3>
+                    <form id="passwordForm">
+                        <div class="form-group">
+                            <label for="currentPassword">Current Password</label>
+                            <input type="password" id="currentPassword" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="newPassword">New Password</label>
+                            <input type="password" id="newPassword" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="confirmPassword">Confirm New Password</label>
+                            <input type="password" id="confirmPassword" required>
+                        </div>
+                        <button type="submit" class="btn-secondary">Change Password</button>
+                    </form>
+                </div>
+
+                <div class="delete-account-card">
+                    <h3>Delete Account</h3>
+                    <div class="warning-text">
+                        <p>⚠️ Warning: This action cannot be undone. All your appointments and data will be permanently deleted.</p>
+                    </div>
+                    <form id="deleteAccountForm">
+                        <div class="form-group">
+                            <label for="deletePassword">Enter Password to Confirm</label>
+                            <input type="password" id="deletePassword" required>
+                        </div>
+                        <button type="submit" class="btn-danger">Delete My Account</button>
+                    </form>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="../js/doctor/profile.js"></script>
+</body>
+</html> 

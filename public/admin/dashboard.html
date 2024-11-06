@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Pendo Medicare</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="dashboard-container">
+        <nav>
+            <h2>Admin Dashboard</h2>
+            <ul>
+                <li><a href="dashboard.html" class="active">
+                    <i class="fas fa-home"></i> Dashboard</a>
+                </li>
+                <li><a href="doctors.html">
+                    <i class="fas fa-user-md"></i> Manage Doctors</a>
+                </li>
+                <li><a href="patients.html">
+                    <i class="fas fa-users"></i> Manage Patients</a>
+                </li>
+                <li><a href="appointments.html">
+                    <i class="fas fa-calendar-check"></i> Appointments</a>
+                </li>
+                <li><a href="#" id="logout">
+                    <i class="fas fa-sign-out-alt"></i> Logout</a>
+                </li>
+            </ul>
+        </nav>
+        <main class="content">
+            <div class="dashboard-header">
+                <h2>Admin Dashboard</h2>
+                <div class="date-filter">
+                    <select id="dateRange">
+                        <option value="today">Today</option>
+                        <option value="week">This Week</option>
+                        <option value="month">This Month</option>
+                        <option value="year">This Year</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="stats-grid">
+                <div class="stat-card primary">
+                    <div class="stat-icon">
+                        <i class="fas fa-user-md"></i>
+                    </div>
+                    <div class="stat-details">
+                        <h3>Total Doctors</h3>
+                        <p id="totalDoctors">0</p>
+                    </div>
+                </div>
+
+                <div class="stat-card success">
+                    <div class="stat-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="stat-details">
+                        <h3>Total Patients</h3>
+                        <p id="totalPatients">0</p>
+                    </div>
+                </div>
+
+                <div class="stat-card info">
+                    <div class="stat-icon">
+                        <i class="fas fa-calendar-check"></i>
+                    </div>
+                    <div class="stat-details">
+                        <h3>Today's Appointments</h3>
+                        <p id="todayAppointments">0</p>
+                    </div>
+                </div>
+
+                <div class="stat-card warning">
+                    <div class="stat-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div class="stat-details">
+                        <h3>Total Appointments</h3>
+                        <p id="totalAppointments">0</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="charts-container">
+                <div class="chart-card">
+                    <h3>Appointment Trends</h3>
+                    <canvas id="appointmentChart"></canvas>
+                </div>
+                <div class="chart-card">
+                    <h3>Doctor Specializations</h3>
+                    <canvas id="specializationChart"></canvas>
+                </div>
+            </div>
+
+            <div class="stats-details-grid">
+                <div class="detail-card">
+                    <h3>Patient Statistics</h3>
+                    <div class="detail-item">
+                        <span>Active Patients</span>
+                        <span id="activePatients">0</span>
+                    </div>
+                    <div class="detail-item">
+                        <span>New Patients This Month</span>
+                        <span id="newPatientsThisMonth">0</span>
+                    </div>
+                </div>
+
+                <div class="detail-card">
+                    <h3>Appointment Statistics</h3>
+                    <div class="detail-item">
+                        <span>Completed Appointments</span>
+                        <span id="completedAppointments">0</span>
+                    </div>
+                    <div class="detail-item">
+                        <span>Canceled Appointments</span>
+                        <span id="canceledAppointments">0</span>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="../js/admin/dashboard.js"></script>
+</body>
+</html> 

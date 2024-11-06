@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile - Hospital Telemedicine</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <nav>
+            <h2>Welcome</h2>
+            <ul>
+                <li><a href="book-appointment.html">Book Appointment</a></li>
+                <li><a href="view-appointments.html">View Appointments</a></li>
+                <li><a href="hospitals.html">Hospitals Near Me</a></li>
+                <li><a href="profile.html" class="active">My Profile</a></li>
+                <li><a href="#" id="logout">Logout</a></li>
+            </ul>
+        </nav>
+        <main class="content">
+            <div class="profile-container">
+                <h2>My Profile</h2>
+                <div class="profile-card">
+                    <form id="profileForm">
+                        <div class="form-group">
+                            <label for="firstName">First Name</label>
+                            <input type="text" id="firstName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="lastName">Last Name</label>
+                            <input type="text" id="lastName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" required readonly>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone</label>
+                            <input type="tel" id="phone" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="dateOfBirth">Date of Birth</label>
+                            <input type="date" id="dateOfBirth" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="gender">Gender</label>
+                            <select id="gender" required>
+                                <option value="M">Male</option>
+                                <option value="F">Female</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="address">Address</label>
+                            <textarea id="address" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="btn-primary">Update Profile</button>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="password-change-card">
+                    <h3>Change Password</h3>
+                    <form id="passwordForm">
+                        <div class="form-group">
+                            <label for="currentPassword">Current Password</label>
+                            <input type="password" id="currentPassword" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="newPassword">New Password</label>
+                            <input type="password" id="newPassword" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="confirmPassword">Confirm New Password</label>
+                            <input type="password" id="confirmPassword" required>
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="btn-secondary">Change Password</button>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="delete-account-card">
+                    <h3>Delete Account</h3>
+                    <div class="warning-text">
+                        <p>⚠️ Warning: This action cannot be undone. All your data will be permanently deleted.</p>
+                    </div>
+                    <form id="deleteAccountForm">
+                        <div class="form-group">
+                            <label for="deletePassword">Enter Password to Confirm</label>
+                            <input type="password" id="deletePassword" required>
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="btn-danger">Delete My Account</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="js/profile.js"></script>
+</body>
+</html> 

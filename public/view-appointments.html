@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Appointments - Hospital Telemedicine</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <nav>
+            <h2>Welcome</h2>
+            <ul>
+                <li><a href="book-appointment.html">Book Appointment</a></li>
+                <li><a href="view-appointments.html" class="active">View Appointments</a></li>
+                <li><a href="hospitals.html">Hospitals Near Me</a></li>
+                <li><a href="profile.html">My Profile</a></li>
+                <li><a href="#" id="logout">Logout</a></li>
+            </ul>
+        </nav>
+        <main class="content">
+            <h2>My Appointments</h2>
+            <div class="appointments-container">
+                <div class="filters">
+                    <select id="statusFilter">
+                        <option value="all">All Appointments</option>
+                        <option value="scheduled">Scheduled</option>
+                        <option value="completed">Completed</option>
+                        <option value="canceled">Canceled</option>
+                        <option value="rescheduled">Rescheduled</option>
+                    </select>
+                </div>
+                <div id="appointmentsList" class="appointments-list">
+                    <!-- Appointments will be loaded here -->
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Reschedule Modal -->
+    <div id="rescheduleModal" class="modal">
+        <div class="modal-content">
+            <h3>Reschedule Appointment</h3>
+            <form id="rescheduleForm">
+                <input type="hidden" id="appointmentId">
+                <div class="form-group">
+                    <label for="newDate">New Date</label>
+                    <input type="date" id="newDate" required>
+                </div>
+                <div class="form-group">
+                    <label for="newTime">New Time</label>
+                    <select id="newTime" required>
+                        <option value="">Select Time</option>
+                    </select>
+                </div>
+                <div class="modal-buttons">
+                    <button type="button" class="btn-secondary" onclick="closeRescheduleModal()">Cancel</button>
+                    <button type="submit" class="btn-primary">Reschedule</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Cancel Modal -->
+    <div id="cancelModal" class="modal">
+        <div class="modal-content">
+            <h3>Cancel Appointment</h3>
+            <form id="cancelForm">
+                <input type="hidden" id="cancelAppointmentId">
+                <div class="form-group">
+                    <label for="cancellationReason">Reason for Cancellation</label>
+                    <textarea id="cancellationReason" required></textarea>
+                </div>
+                <div class="modal-buttons">
+                    <button type="button" class="btn-secondary" onclick="closeCancelModal()">Back</button>
+                    <button type="submit" class="btn-danger">Cancel Appointment</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/view-appointments.js"></script>
+</body>
+</html> 

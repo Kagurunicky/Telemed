@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pendo Telemedicine</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="main-header">
+        <nav class="nav-container">
+            <div class="logo">
+                <img src="images/pendo-logo.png" alt="Pendo Medicare Logo">
+                <h1>Pendo Medicare</h1>
+            </div>
+            <div class="nav-links">
+                <a href="#services">Services</a>
+                <a href="#about">About Us</a>
+                <a href="#contact">Contact</a>
+                <a href="login.html" class="btn-login">Login</a>
+                <a href="signup.html" class="btn-signup">Sign Up</a>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Healthcare at Your Fingertips</h1>
+                <p>Connect with expert doctors anytime, anywhere through secure video consultations</p>
+                <div class="cta-buttons">
+                    <a href="signup.html" class="btn-primary">Get Started</a>
+                    <a href="#how-it-works" class="btn-secondary">How It Works</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="images/telemedicine-hero.png" alt="Telemedicine Consultation">
+            </div>
+        </section>
+
+        <section id="services" class="services-section">
+            <h2>Our Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <img src="images/video-consultation.png" alt="Video Consultation">
+                    <h3>Video Consultations</h3>
+                    <p>Face-to-face online consultations with qualified doctors</p>
+                </div>
+                <div class="service-card">
+                    <img src="images/prescription.png" alt="E-Prescriptions">
+                    <h3>E-Prescriptions</h3>
+                    <p>Digital prescriptions sent directly to your preferred pharmacy</p>
+                </div>
+                <div class="service-card">
+                    <img src="images/medical-records.png" alt="Medical Records">
+                    <h3>Digital Health Records</h3>
+                    <p>Secure access to your medical history and test results</p>
+                </div>
+                <div class="service-card">
+                    <img src="images/specialist.png" alt="Specialist Care">
+                    <h3>Specialist Care</h3>
+                    <p>Connect with specialized healthcare professionals</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="how-it-works" class="how-it-works">
+            <h2>How It Works</h2>
+            <div class="steps-container">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <img src="images/register.png" alt="Register">
+                    <h3>Create Account</h3>
+                    <p>Sign up and complete your health profile</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <img src="images/book-appointment.png" alt="Book Appointment">
+                    <h3>Book Appointment</h3>
+                    <p>Choose your doctor and preferred time</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <img src="images/consultation.png" alt="Consultation">
+                    <h3>Consult Doctor</h3>
+                    <p>Connect through secure video call</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <img src="images/treatment.png" alt="Treatment">
+                    <h3>Get Treatment</h3>
+                    <p>Receive prescription and follow-up care</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="about-section">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>About Pendo Medicare</h2>
+                    <p>We are revolutionizing healthcare delivery through cutting-edge telemedicine solutions. Our platform connects you with experienced healthcare professionals, making quality medical care accessible to everyone.</p>
+                    <div class="stats-grid">
+                        <div class="stat">
+                            <h3>10k+</h3>
+                            <p>Patients Served</p>
+                        </div>
+                        <div class="stat">
+                            <h3>100+</h3>
+                            <p>Expert Doctors</p>
+                        </div>
+                        <div class="stat">
+                            <h3>4.9/5</h3>
+                            <p>Patient Rating</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <img src="images/about-telemedicine.png" alt="About Telemedicine">
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact-section">
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h2>Get in Touch</h2>
+                    <div class="info-card">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h3>Visit Us</h3>
+                            <p>123 Medical Plaza<br>Muranga, Kenya</p>
+                        </div>
+                    </div>
+                    <div class="info-card">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h3>Call Us</h3>
+                            <p>+254 207 909 045</p>
+                        </div>
+                    </div>
+                    <div class="info-card">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h3>Email Us</h3>
+                            <p>info@pendomedicare.com</p>
+                        </div>
+                    </div>
+                </div>
+
+                <form id="contactForm" class="contact-form">
+                    <h2>Send Message</h2>
+                    <div class="form-group">
+                        <input type="text" id="name" required>
+                        <label for="name">Your Name</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" required>
+                        <label for="email">Your Email</label>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" required></textarea>
+                        <label for="message">Your Message</label>
+                    </div>
+                    <button type="submit" class="btn-primary">Send Message</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <img src="images/pendo-logo-white.png" alt="Pendo Medicare" class="footer-logo">
+                <p>Making healthcare accessible to everyone, everywhere.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Services</h3>
+                <ul>
+                    <li><a href="#">Video Consultation</a></li>
+                    <li><a href="#">E-Prescriptions</a></li>
+                    <li><a href="#">Health Records</a></li>
+                    <li><a href="#">Specialist Care</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Working Hours</h3>
+                <ul class="hours">
+                    <li>Monday - Friday: 24/7</li>
+                    <li>Saturday: 24/7</li>
+                    <li>Sunday: 24/7</li>
+                    <li>Emergency: Always Available</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Pendo Medicare. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/index.js"></script>
+</body>
+</html> 

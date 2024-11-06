@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Patients - Doctor Dashboard</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <nav>
+         
+                <h2>Doctor Dashboard</h2>
+                <ul>
+                    <li><a href="dashboard.html" class="active">
+                        <i class="fas fa-home"></i> Dashboard</a>
+                    </li>
+                    <li><a href="appointments.html">
+                        <i class="fas fa-calendar-check"></i> Appointments</a>
+                    </li>
+                    <li><a href="patients.html">
+                        <i class="fas fa-users"></i> My Patients</a>
+                    </li>
+                    <li><a href="schedule.html">
+                        <i class="fas fa-clock"></i> My Schedule</a>
+                    </li>
+                    <li><a href="medical-records.html">
+                        <i class="fas fa-user-md"></i> Upload Records</a>
+                    </li>
+                    <li><a href="profile.html">
+                        <i class="fas fa-user-md"></i> Profile</a>
+                    </li>
+                    <li><a href="#" id="logout">
+                        <i class="fas fa-sign-out-alt"></i> Logout</a>
+                    </li>
+                </ul>
+        </nav>
+        <main class="content">
+            <div class="patients-container">
+                <h2>My Patients</h2>
+                <div class="search-filters">
+                    <input type="text" id="searchPatient" placeholder="Search patients...">
+                    <select id="filterVisits">
+                        <option value="all">All Patients</option>
+                        <option value="recent">Recent Visits</option>
+                        <option value="pending">Pending Appointments</option>
+                    </select>
+                </div>
+                <div class="patients-grid" id="patientsList">
+                    <!-- Patients will be loaded here -->
+                </div>
+
+                <!-- Patient Details Modal -->
+                <div id="patientModal" class="modal">
+                    <div class="modal-content">
+                        <h3>Patient Details</h3>
+                        <div class="patient-details">
+                            <div class="personal-info">
+                                <h4>Personal Information</h4>
+                                <p><strong>Name:</strong> <span id="patientName"></span></p>
+                                <p><strong>Age:</strong> <span id="patientAge"></span></p>
+                                <p><strong>Gender:</strong> <span id="patientGender"></span></p>
+                                <p><strong>Phone:</strong> <span id="patientPhone"></span></p>
+                            </div>
+                            <div class="medical-history">
+                                <h4>Medical History</h4>
+                                <div id="medicalHistory"></div>
+                            </div>
+                            <div class="appointment-history">
+                                <h4>Appointment History</h4>
+                                <div id="appointmentHistory"></div>
+                            </div>
+                        </div>
+                        <div class="modal-buttons">
+                            <button onclick="closePatientModal()" class="btn-secondary">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="../js/doctor/patients.js"></script>
+</body>
+</html> 

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medical Records - Doctor Dashboard</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <nav>
+            <nav>
+                <h2>Doctor Dashboard</h2>
+                <ul>
+                    <li><a href="dashboard.html" class="active">
+                        <i class="fas fa-home"></i> Dashboard</a>
+                    </li>
+                    <li><a href="appointments.html">
+                        <i class="fas fa-calendar-check"></i> Appointments</a>
+                    </li>
+                    <li><a href="patients.html">
+                        <i class="fas fa-users"></i> My Patients</a>
+                    </li>
+                    <li><a href="schedule.html">
+                        <i class="fas fa-clock"></i> My Schedule</a>
+                    </li>
+                    <li><a href="medical-records.html">
+                        <i class="fas fa-user-md"></i> Upload Records</a>
+                    </li>
+                    <li><a href="profile.html">
+                        <i class="fas fa-user-md"></i> Profile</a>
+                    </li>
+                 
+                    <li><a href="#" id="logout">
+                        <i class="fas fa-sign-out-alt"></i> Logout</a>
+                    </li>
+                </ul>
+        </nav>
+        <main class="content">
+            <div class="medical-records-container">
+                <h2>Medical Records</h2>
+                
+                <!-- Upload Form -->
+                <div class="upload-section">
+                    <form id="uploadForm" class="record-upload-form">
+                        <div class="form-group">
+                            <label for="patientSelect">Select Patient</label>
+                            <select id="patientSelect" required>
+                                <option value="">Choose a patient</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="recordType">Record Type</label>
+                            <select id="recordType" required>
+                                <option value="">Select type</option>
+                                <option value="Lab Results">Lab Results</option>
+                                <option value="X-Ray">X-Ray</option>
+                                <option value="Prescription">Prescription</option>
+                                <option value="Medical History">Medical History</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="recordFile">Upload File</label>
+                            <input type="file" id="recordFile" required>
+                            <small>Supported formats: PDF, JPG, PNG (Max 5MB)</small>
+                        </div>
+                        <div class="form-group">
+                            <label for="notes">Notes</label>
+                            <textarea id="notes" rows="3"></textarea>
+                        </div>
+                        <button type="submit" class="btn-primary">Upload Record</button>
+                    </form>
+                </div>
+
+                <!-- Records List -->
+                <div class="records-list">
+                    <h3>Recent Uploads</h3>
+                    <div class="filters">
+                        <select id="patientFilter">
+                            <option value="">All Patients</option>
+                        </select>
+                        <select id="typeFilter">
+                            <option value="">All Types</option>
+                            <option value="Lab Results">Lab Results</option>
+                            <option value="X-Ray">X-Ray</option>
+                            <option value="Prescription">Prescription</option>
+                            <option value="Medical History">Medical History</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                    <div id="recordsList" class="records-grid">
+                        <!-- Records will be loaded here -->
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="../js/doctor/medical-records.js"></script>
+</body>
+</html> 
